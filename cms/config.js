@@ -298,7 +298,7 @@ const config = {
     cms_manual_init: true,
     backend: {
         name: 'git-gateway',
-        repo: 'littledata/public-site-netlify',
+        repo: 'ua9msn/nextblog',
         branch: 'main',
         local_backend: true
     },
