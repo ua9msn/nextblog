@@ -1,0 +1,17 @@
+@import './styles/mixins/container';
+
+.hero {
+    padding: 0 0.75rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .container{
+        @include container;
+        display: flex;
+        align-items: center;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+}
+
