@@ -1,6 +1,14 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
+
+const Loading = () => (
+    <div className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-500 font-semibold text-xl">Loading...</p>
+    </div>
+);
+
+
 const MyTemplate = (data: any) => {
     console.log(data);
     return (
@@ -51,7 +59,7 @@ const CMS = dynamic(
             CMS.init(config);
             CMS.registerPreviewTemplate('caseStudies', MyTemplate);
         }),
-    { ssr: false }
+    { ssr: false, loading: Loading }
 );
 
 const Admin = () => (
