@@ -8,18 +8,8 @@ const Loading = () => (
     </div>
 );
 
-
-const MyTemplate = (data: any) => {
-    console.log(data);
-    return (
-        <div>AAAA</div>
-    )
-}
-
-
 // Initialize the CMS object
 const config = {
-    config: {
         backend: {
             name: 'git-gateway',
             branch: 'main'
@@ -49,19 +39,17 @@ const config = {
                 }]
             }
         ]
-    }
-
 }
 
 const CMS = dynamic(
     () =>
         import('netlify-cms-app').then((cms) => {
-            cms.init({ config });
+            cms.init({config});
         }),
     { ssr: false, loading: () => <p>Loading...</p> }
 );
 
-const AdminPage: React.FC = () => {
+const AdminPage = () => {
     return <CMS />;
 };
 
