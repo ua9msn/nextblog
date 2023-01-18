@@ -55,21 +55,14 @@ const config = {
 
 const CMS = dynamic(
     () =>
-        import('netlify-cms-app').then((CMS) => {
-            CMS.init(config);
-            CMS.registerPreviewTemplate('caseStudies', MyTemplate);
+        import('netlify-cms-app').then((cms) => {
+            cms.init({ config });
         }),
-    { ssr: false, loading: Loading }
+    { ssr: false, loading: () => <p>Loading...</p> }
 );
 
-const Admin = () => (
-    <>
-        <Head>
-            <title>Admin</title>
-            <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer />
-        </Head>
-        <CMS />
-    </>
-);
+const AdminPage: React.FC = () => {
+    return <CMS />;
+};
 
-export default Admin;
+export default AdminPage;
