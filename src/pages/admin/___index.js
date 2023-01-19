@@ -48,8 +48,8 @@ const CMS = dynamic(
 
 const Admin = () => (
 	<>
-		<Head title="sdfgsdfg">
-            <title>Admin</title>
+		<Head>
+			<title>Admin</title>
 			<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer />
 		</Head>
 		<CMS />
